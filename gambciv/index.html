@@ -7,8 +7,8 @@
 	width: 100%;
 	margin-top: 0px;
 	margin-left: 0px;
-	background-color: #FFFBF0;
-	font-size: 13px;
+	background-color: #111111;
+	font-size: 14px;
 	font-family: Georgia;
       }
 
@@ -22,7 +22,7 @@
       }
 
       #head_container {
-	border-bottom: 1px solid #111111;
+	background-color: #FFFBF0;
       }
 
       #head_content {
@@ -34,34 +34,39 @@
       }
 
       #main_container {
-	max-width: 1000px;
-	min-width: 780px;
+	width: 780px;
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	position: relative;
       }
 
       #main_content {
-	max-width: 786px;
-	min-width: 566px;
-	border: 1px solid #111111;
+	width: 571px;
 	background-color: #FFFFFF;
+	border: 1px solid #111111;
+	padding: 5px;
+      }
+
+      #sidebar {
+	width: 180px;
+	float: right;
+	height: 500px;
+	background-color: #FFFFFF;
+	border: 1px solid #111111;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 5px;
       }
 
-      #sidebar {
-	width: 190px;
-	border: 1px solid #111111;
-	background-color: #FFFFFF;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-	position: absolute;
-	top: 0px;
-	right: 0px;
+      .subtitle_bar {
+	width: 100%;
+	margin-left: -5px;
+	padding-left: 10px;
+	border-top: 1px solid #111111;
+	border-bottom: 1px solid #111111;
+	font-size: 16px;
+	color: #111111;
+	background-color: #FFFBF0;
       }
 
     </style>
@@ -75,17 +80,20 @@
     </div>
 
     <div id="main_container" class="container">
-      <div id="main_content">
-	Hey foo
-      </div>
-
       <div id="sidebar">
 	About<br>
 	Guide<br>
-	Download
+	Downloads
 	<p>
 	  Latest Commits:<br>
 	</p>
+      </div>
+
+      <div id="main_content">
+	<div class="subtitle_bar">About</div>
+	<p>GambCiv is a Civilization-like add-on for the open source strategy game: <a href="http://wesnoth.org">Battle for Wesnoth</a>.</p>
+	<p>It adds many popular strategy game features that are missing from Wesnoth. Besides just gold, you now have to manage food and building material. You are able to construct buildings, destroy enemy fortifications, farm, harvest natural resources, and change the terrain of the maps you play on.</p>
+	<p>It is 100% compatabile with other Wesnoth maps and scenarios. You are able to play it with any existing Wesnoth map you choose. It comes with some specially designed maps, or you could even create your own!</p>
       </div>
     </div>
 
