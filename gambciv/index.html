@@ -1,101 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>GambCiv</title>
     <style type="text/css">
 
-      body {
-	width: 100%;
-	margin-top: 0px;
-	margin-left: 0px;
-	background-color: #111111;
-	font-size: 14px;
-	font-family: Georgia;
-      }
+html {
+  margin-left: 0px;
+  margin-top: 0px;
+}
 
-      a {
-	text-decoration: none;
-      }
+body {
+  font-family: Georgia;
+  font-size: 14px;
+  background-color: #E7D9C0;
+}
 
-      .container {
-	width: 100%;
-	margin-top: 0px;
-      }
+a:link, a:visited, a {
+  color: #111111;
+  font-weight: 700;
+  text-decoration: underline;
+}
 
-      #head_container {
-	background-color: #FFFBF0;
-      }
+a:hover {
+  color: #E7D9C0;
+}
 
-      #head_content {
-	width: 130px;
-	margin-left: auto;
-	margin-right: auto;
-	color: #111111;
-	font-size: 30px;
-      }
+a:active {
+  color: #FFFBF0;
+}
 
-      #main_container {
-	width: 780px;
-	margin-top: 10px;
-	margin-left: auto;
-	margin-right: auto;
-      }
+#wrapper {
+  width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-      #main_content {
-	width: 571px;
-	background-color: #FFFFFF;
-	border: 1px solid #111111;
-	padding: 5px;
-      }
+#header {
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 30px;
+  color: #FFFBF0;
+  background-color: #111111;
+}
 
-      #sidebar {
-	width: 180px;
-	float: right;
-	height: 500px;
-	background-color: #FFFFFF;
-	border: 1px solid #111111;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-      }
+#main {
+  width: 593px;
+  float: left;
+  padding: 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+}
 
-      .subtitle_bar {
-	width: 100%;
-	margin-left: -5px;
-	padding-left: 10px;
-	border-top: 1px solid #111111;
-	border-bottom: 1px solid #111111;
-	font-size: 16px;
-	color: #111111;
-	background-color: #FFFBF0;
-      }
+#sidebar {
+  width: 158px;
+  float: right;
+  padding: 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+}
+
+.subtitlebar {
+  width: 100%;
+  margin-left: -5px;
+  padding-left: 10px;
+  background-color: #FFFBF0;
+  font-size: 16px;
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+}
 
     </style>
   </head>
   <body>
 
-    <div id="head_container" class="container">
-      <div id="head_content">
-	GambCiv
-      </div>
-    </div>
+    <div id="wrapper">
+      <div id="header" class="container">GambCiv</div>
 
-    <div id="main_container" class="container">
-      <div id="sidebar">
-	About<br>
-	Guide<br>
-	Downloads
-	<p>
-	  Latest Commits:<br>
-	</p>
-      </div>
-
-      <div id="main_content">
-	<div class="subtitle_bar">About</div>
+      <div id="main">
+	<div class="subtitlebar">About</div>
 	<p>GambCiv is a Civilization-like add-on for the open source strategy game: <a href="http://wesnoth.org">Battle for Wesnoth</a>.</p>
 	<p>It adds many popular strategy game features that are missing from Wesnoth. Besides just gold, you now have to manage food and building material. You are able to construct buildings, destroy enemy fortifications, farm, harvest natural resources, and change the terrain of the maps you play on.</p>
 	<p>It is 100% compatabile with other Wesnoth maps and scenarios. You are able to play it with any existing Wesnoth map you choose. It comes with some specially designed maps, or you could even create your own!</p>
-      </div>
-    </div>
 
+	<div class="subtitlebar">Guide</div>
+	<p>GambCiv can be very disconcerting. It's very different from standard Wesnoth gameplay. You should practice offline in a match where you control all the sides.</p>
+	<p>The basic rules are as follows:
+	  <ul>
+	    <li>You can right-click and build anywhere within three hexes of one of your peasants.</li>
+	    <li>As long as that space also has a nearby community.</li>
+	    <li>You get "community" by having your leader on a keep within seven hexes.</li>
+	    <li>You also get "community" in the fifteen hexes around any huts you own.</li>
+	    <li>You cannot build right next to an enemy hut.</li>
+	    <li>You can only perform so many actions per turn. Each one costs an "action point"</li>
+	    <li>You can get more "action points" each turn by building more huts.</li>
+	  </ul>
+	</p>
+	<p>Protips:
+	  <ul>
+	    <li>Harvesting crops or mushrooms doesn't cost you any action points.</li>
+	    <li>You can check your resources by right clicking your leader.</li>
+	    <li>Your resources are also displayed at the top of every build menu.</li>
+	    <li>You should plant four wheat on turn two. That way you're guaranteed to get a hut on turn three.</li>
+	  </ul>
+	</p>
+      </div>
+
+      <div id="sidebar">
+	<div class="subtitlebar">Navigation</div>
+	<p>
+	  <a href="index.html">About</a><br>
+	  <a href="downloads.html">Downloads</a>
+	</p>
+	<div class="subtitlebar">Latest commits</div>
+	<p>
+	  "Foo bar baz"<br>
+	  - 03-09-11
+	</p>
+	<p>
+	  "Foo bar baz"<br>
+	  - 03-09-11
+	</p>
+	<p>
+	  "Foo bar baz"<br>
+	  - 03-09-11
+	</p>
+      </div>
+
+    </div>
   </body>
 </html>
