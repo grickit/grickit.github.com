@@ -1,7 +1,91 @@
 <html>
-<body>
-Hello world
+  <head>
+    <title>Landing</title>
+    <style type="text/css">
+      body {
+	background-color: #000000;
+      }
 
-##Gambot at irc.freenode.net
-</body>
+      a {
+	text-decoration: none;
+      }
+
+      #title {
+	width: 520px;
+	height: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #0090B0;
+	font-size: 70px;
+      }
+
+      #subtitle {
+	width: 520px;
+	height: 40px;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #FFFFFF;
+	font-size: 30px;
+      }
+
+      #project_holder {
+	width: 520px;
+	height: 520px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20px;
+      }
+
+      .project {
+	width: 170px;
+	height: 170px;
+	float: left;
+	margin-right: 1px;
+	display: block;
+	background-color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+      }
+
+      a.project p {
+	margin-top: 120px;
+	text-align: center;
+	background-color: #000000;
+	border-top: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+      }
+
+      a.project:link p, a.project:visited p {
+	color: #FFFFFF;
+      }
+
+      a.project:hover p {
+	color: #0090B0;
+      }
+
+      #Gambot {
+	background-image: url('images/landing/gambot.png');
+      }
+
+      #GambCiv {
+	background-image: url('images/landing/gambciv.png');
+      }
+
+      #Mineshell {
+	background-image: url('images/landing/mineshell.png');
+      }
+    </style>
+  </head>
+  <body>
+
+  <div id="title">grickit.github.com</div>
+  <div id="subtitle">Which project are you here for?</div>
+
+  <div id="project_holder">
+    <a class="project" id="Gambot" href="gambot.html"><p>Gambot</p></a>
+    <a class="project" id="GambCiv" href="gambciv.html"><p>GambCiv</p></a>
+    <a class="project" id="Mineshell" href="mineshell.html"><p>Mineshell</p></a>
+  </div>
+
+  </body>
 </html>
