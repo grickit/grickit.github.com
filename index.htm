@@ -3,13 +3,17 @@
     <title>Landing</title>
     <style type="text/css">
       body {
-	text-align: center;
 	background-color: #000000;
 	font-family: Georgia;
       }
 
       a {
 	text-decoration: none;
+      }
+
+      #container {
+	width: 100%;
+	height: 100%
       }
 
       #title {
@@ -81,13 +85,15 @@
   </head>
   <body>
 
-  <div id="title">grickit.github.com</div>
-  <div id="subtitle">Which project are you here for?</div>
+  <div id="container">
+    <div id="title">grickit.github.com</div>
+    <div id="subtitle">Which project are you here for?</div>
 
-  <div id="project_holder">
-    <a class="project" id="Gambot" href="gambot.html"><p>Gambot</p></a>
-    <a class="project" id="GambCiv" href="gambciv.html"><p>GambCiv</p></a>
-    <a class="project" id="Mineshell" href="mineshell.html"><p>Mineshell</p></a>
+    <div id="project_holder">
+      <a class="project" id="Gambot" href="gambot.html"><p>Gambot</p></a>
+      <a class="project" id="GambCiv" href="gambciv.html"><p>GambCiv</p></a>
+      <a class="project" id="Mineshell" href="mineshell.html"><p>Mineshell</p></a>
+    </div>
   </div>
 
   </body>
