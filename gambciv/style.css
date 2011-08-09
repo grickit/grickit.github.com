@@ -1,0 +1,65 @@
+html {
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+body {
+  font-family: Georgia;
+  font-size: 14px;
+  background-image: url('grass-tile.png');
+}
+
+a:link, a:visited, a {
+  color: #111111;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #E7D9C0;
+}
+
+a:active {
+  color: #FFFBF0;
+}
+
+#wrapper {
+  width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 30px;
+  color: #111111;
+  background-color: #E7D9C0;
+  border: 1px solid #111111;
+}
+
+#main {
+  width: 593px;
+  float: left;
+  padding: 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+}
+
+#sidebar {
+  width: 158px;
+  float: right;
+  padding: 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+}
+
+.subtitlebar {
+  width: 100%;
+  margin-left: -5px;
+  padding-left: 10px;
+  background-color: #E7D9C0;
+  font-size: 16px;
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+}
