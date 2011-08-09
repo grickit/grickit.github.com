@@ -1,9 +1,13 @@
 html {
+  width: 100%;
   margin-left: 0px;
   margin-top: 0px;
 }
 
 body {
+  width: 100%;
+  margin-left: 0px;
+  margin-top: 0px;
   font-family: Georgia;
   font-size: 14px;
   background-image: url('grass-tile.png');
@@ -21,6 +25,21 @@ a:hover {
 
 a:active {
   color: #FFFBF0;
+}
+
+#global_header {
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #111111;
+
+}
+
+#global_header a, #global_header a:link, #global_header a:visited {
+  color: #0090B0;
+  text-decoration: none;
 }
 
 #wrapper {
