@@ -1,8 +1,0 @@
-dir gambciv
-load gambciv-opening
-load aa-globalheader
-load gambciv-sidebar
-load gambciv-closing
-load gambciv-index
-load gambciv-downloads
-compile
