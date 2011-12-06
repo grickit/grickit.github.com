@@ -6,6 +6,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Landing</title>
     <script type="text/javascript" src="scripts/analytics.js"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+	(function() {
+	    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+	    s.type = 'text/javascript';
+	    s.async = true;
+	    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+	    t.parentNode.insertBefore(s, t);
+	})();
+    /* ]]> */
+    </script>
 
     <style type="text/css">
       body {
@@ -36,6 +47,14 @@
 	margin-right: auto;
 	color: #FFFFFF;
 	font-size: 30px;
+      }
+
+      #flattr {
+	width: 700px;
+	height: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: right;
       }
 
       #project_holder {
@@ -103,6 +122,12 @@
 
     <div id="title">grickit</div>
     <div id="subtitle">I do a lot of things. Which one are you here for? <span style="font-size:16px;">(hover for more information)</span></div>
+    <div id="flattr">
+      <a class="FlattrButton" style="display:none;" href="http://grickit.github.com"></a>
+      <noscript>
+      <a href="http://flattr.com/thing/447711/grickit-github-com" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+      </noscript>
+    </div>
 
     <div id="project_holder">
       <a class="project" id="Gambot" href="https://github.com/grickit/Gambot" title="Gambot is a modular, fully asynchronous, IRC bot framework. Extensions can be written in any langauge thanks to an API."><p>Gambot</p></a>
