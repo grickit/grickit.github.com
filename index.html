@@ -7,29 +7,8 @@
     <title>Landing</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="scripts/analytics.js"></script>
-    <script type="text/javascript">
-    /* <![CDATA[ */
-	(function() {
-	    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-	    s.type = 'text/javascript';
-	    s.async = true;
-	    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
-	    t.parentNode.insertBefore(s, t);
-	})();
-    /* ]]> */
-    </script>
-    <script type="text/javascript">
-      function moreInfo(object) {
-	if(document.getElementById('moreInfo').innerHTML == object.title) {
-	  return true;
-	}
-	else {
-	  document.getElementById('moreInfo').innerHTML = object.title;
-	  return false;
-	}
-      }
-      var Gambot = new moreInfo('Gambot');
-    </script>
+    <script type="text/javascript" src="scripts/flattr.js"></script>
+    <script type="text/javascript" src="scripts/moreInfo.js"></script>
   </head>
   <body>
 
