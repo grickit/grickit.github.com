@@ -62,7 +62,7 @@ a {
   border: 1px solid #FFFFFF;
 }
 
-a.project p {
+a.project div {
   margin-top: 120px;
   text-align: center;
   background-color: #111111;
@@ -70,11 +70,11 @@ a.project p {
   border-bottom: 1px solid #FFFFFF;
 }
 
-a.project:link p, a.project:visited p {
+a.project:link div, a.project:visited div {
   color: #FFFFFF;
 }
 
-a.project:hover p {
+a.project:hover div {
   color: #0090B0;
 }
 
