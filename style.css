@@ -1,6 +1,6 @@
 body {
   background-color: #111111;
-  font-family: Georgia;
+  font-family: "Times New Roman";
 }
 
 a {
@@ -13,19 +13,18 @@ a {
   margin-left: auto;
   margin-right: auto;
   color: #0090B0;
-  font-size: 70px;
+  font-size: 5em;
   text-shadow: 3px 3px 3px #444444;
 }
 
 #subtitle {
   width: 705px;
-  height: 40px;
-  margin-top: 60px;
+  margin-top: 40px;
   margin-left: auto;
   text-align: left;
   margin-right: auto;
   color: #FFFFFF;
-  font-size: 30px;
+  font-size: 2em;
 }
 
 #moreInfo {
@@ -45,7 +44,6 @@ a {
 
 #project_holder {
   width: 705px;
-  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
   font-size: 20px;
