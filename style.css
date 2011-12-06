@@ -1,0 +1,107 @@
+body {
+  background-color: #111111;
+  font-family: Georgia;
+}
+
+a {
+  text-decoration: none;
+}
+
+#title {
+  width: 705px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #0090B0;
+  font-size: 70px;
+  text-shadow: 3px 3px 3px #444444;
+}
+
+#subtitle {
+  width: 705px;
+  height: 40px;
+  margin-top: 60px;
+  margin-left: auto;
+  text-align: left;
+  margin-right: auto;
+  color: #FFFFFF;
+  font-size: 30px;
+}
+
+#moreInfo {
+  clear: both;
+  width: 705px;
+  margin-left: auto;
+  text-align: left;
+  margin-right: auto;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+#flattr {
+  float: right;
+  text-align: right;
+}
+
+#project_holder {
+  width: 705px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+}
+
+.project {
+  width: 170px;
+  height: 170px;
+  float: left;
+  margin-top: 3px;
+  margin-right: 3px;
+  display: block;
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+
+a.project p {
+  margin-top: 120px;
+  text-align: center;
+  background-color: #111111;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+a.project:link p, a.project:visited p {
+  color: #FFFFFF;
+}
+
+a.project:hover p {
+  color: #0090B0;
+}
+
+#Gambot {
+  background-image: url('images/landing/gambot.png');
+}
+
+#GambCiv {
+  background-image: url('images/landing/gambciv.png');
+}
+
+#Mineshell {
+  background-image: url('images/landing/mineshell.png');
+}
+
+#Twitter {
+  background-image: url('images/landing/twitter.png');
+}
+
+#CAS {
+  background-image: url('images/landing/cas.png');
+}
+
+#NotPokemon {
+  background-image: url('images/landing/notpokemon.png');
+}
+
+#Wesnoth {
+  background-image: url('images/landing/wesnoth.png');
+}
