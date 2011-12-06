@@ -62,7 +62,8 @@ a {
   border: 1px solid #FFFFFF;
 }
 
-a.project div {
+a.project span {
+  display: block;
   margin-top: 120px;
   text-align: center;
   background-color: #111111;
@@ -70,11 +71,11 @@ a.project div {
   border-bottom: 1px solid #FFFFFF;
 }
 
-a.project:link div, a.project:visited div {
+a.project:link span, a.project:visited span {
   color: #FFFFFF;
 }
 
-a.project:hover div {
+a.project:hover span {
   color: #0090B0;
 }
 
