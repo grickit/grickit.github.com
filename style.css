@@ -101,6 +101,10 @@ a.project:hover span {
   background-image: url('images/landing/notpokemon.png');
 }
 
+#Articles {
+  background-image: url('images/landing/articles.png');
+}
+
 #Wesnoth {
   background-image: url('images/landing/wesnoth.png');
 }
