@@ -1,26 +1,36 @@
 #globalheader {
-  width: 100%;
+  /* Placement */
   margin-top: 0px;
   margin-bottom: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  /* Box */
+  width: 100%;
+  padding: 1em;
   background-color: #111111;
-  text-align: left;
-  color: #0090B0;
-  text-shadow: 3px 3px 3px #888888;
   border-bottom: 2px solid #0090B0;
+  /* Text */
+  text-align: left;
   font-family: Arial;
-  font-size: 10pt;
+  font-size: 0.9em;
+  color: #0090B0;
+  /* Advanced */
+  text-shadow: 3px 3px 3px #888888;
+  box-shadow: 1px 1px 1px #888888;
 }
 
 #globalheader a, #globalheader a:link, #globalheader a:visited {
-  color: #FFFFFF;
-  text-shadow: 1px 1px 1px #888888;
+  /* Placement */
+  margin-left: 1em;
+  /* Text */
   text-decoration: none;
+  color: #FFFFFF;
+  /* Advanced */
+  text-shadow: 1px 1px 1px #888888;
 }
 
 #globalheader a:hover {
-  color: #0090B0;
-  text-shadow: 1px 1px 1px #888888;
+  /* Text */
   text-decoration: none;
+  color: #0090B0;
+  /* Advanced */
+  text-shadow: 1px 1px 1px #888888;
 }
