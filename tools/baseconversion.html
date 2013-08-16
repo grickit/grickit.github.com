@@ -7,16 +7,56 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        var baseCharset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY+/';
+        var baseCharset = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/';
 
         $('#resetFromCharset').on('click',function() { $('#fromCharset').val(baseCharset); });
+
         $('#resetToCharset').on('click',function() { $('#toCharset').val(baseCharset); });
+
+        $('#convert').on('click',function() {
+          var value = $('#fromText').val();
+          var fromCharset = $('#fromCharset').val();
+          var toCharset = $('#toCharset').val();
+          var fromBase = $('#fromBase').val();
+          var toBase = $('#toBase').val();
+
+          if(fromBase > fromCharset.length) { console.log('Not enough characters in the starting character set.'); }
+          if(toBase > toCharset.length) { console.log('Not enough characters in the result character set.'); }
+
+          // Convert to base10 first
+          var temp = value;
+          var number = 0;
+          var multiplier = 1;
+          while(temp.length > 0) {
+            number += multiplier*fromCharset.indexOf(temp.charAt(temp.length -1)); // Add the base10 value of the last character
+            temp = temp.substring(0,temp.length -1); // Chop off the last character
+            multiplier *= fromBase; // Compound the multiplier
+          }
+
+          // Convert to result base next
+          var temp = number;
+          var result = '';
+          while (temp >= toBase) {
+            result = toCharset.charAt(temp%toBase)+result;
+            temp /= toBase; // Divide by the base
+          }
+          result = toCharset.charAt(temp)+result;
+
+          // Show the result
+          $('#toText').val(result);
+        });
       });
 
     </script>
     <style type="text/css">
       .input-group-addon label {
         min-width: 7em;
+      }
+
+      textarea {
+        min-width: 492px;
+        width: 492px;
+        max-width: 492px;
       }
     </style>
   </head>
@@ -32,7 +72,7 @@
           <div class="row">
             <div class="input-group col-md-8">
               <span class="input-group-addon"><label for="fromText">String:</label></span>
-              <input type="text" id="fromText" class="form-control" value="9001">
+              <textarea id="fromText" class="form-control">9001</textarea>
             </div>
 
             <div class="input-group col-md-4">
@@ -46,12 +86,12 @@
           <div class="row">
             <div class="input-group col-md-8">
               <span class="input-group-addon"><label for="toText">Result:</label></span>
-              <input type="text" id="toText" class="form-control" disabled="disabled">
+              <textarea id="toText" class="form-control" disabled="disabled"></textarea>
             </div>
 
             <div class="input-group col-md-4">
               <span class="input-group-addon "><label for="toBase">Base:</label></span>
-              <input type="number" id="ToBase" class="form-control" value="62">
+              <input type="number" id="toBase" class="form-control" value="62">
             </div>
           </div>
 
@@ -59,7 +99,7 @@
 
           <div class="row">
             <div class="input-group col-md-2">
-              <button id="convert" class="btn btn-info" onclick="convertText()">Convert</button>
+              <button id="convert" class="btn btn-info">Convert</button>
             </div>
           </div>
         </fieldset>
@@ -72,7 +112,7 @@
           <div class="row">
             <div class="input-group col-md-12">
               <span class="input-group-addon"><label for="fromCharset">From charset:</label></span>
-              <input type="text" id="fromCharset" class="form-control" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY+/">
+              <input type="text" id="fromCharset" class="form-control" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/">
               <span class="input-group-btn"><button id="resetFromCharset" class="btn btn-warning">Reset</button></span>
             </div>
           </div>
@@ -82,7 +122,7 @@
           <div class="row">
             <div class="input-group col-md-12">
               <span class="input-group-addon"><label for="toCharset">To charset:</label></span>
-              <input type="text" id="toCharset" class="form-control" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY+/">
+              <input type="text" id="toCharset" class="form-control" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/">
               <span class="input-group-btn"><button id="resetToCharset" class="btn btn-warning" onlick="resetCharset(toCharset)">Reset</button></span>
             </div>
           </div>
