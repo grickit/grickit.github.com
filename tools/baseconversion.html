@@ -12,22 +12,38 @@
       $(document).ready(function() {
         var baseCharset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/';
 
-        $('#resetFromCharset').on('click',function() { $('#fromCharset').val(baseCharset); });
-
-        $('#resetToCharset').on('click',function() { $('#toCharset').val(baseCharset); });
-
-        $('#convert').on('click',function() {
-          var value = $('#fromText').val();
+        function convert() {
+          var fromString = $('#fromText').val();
+          var toString = '';
           var fromCharset = $('#fromCharset').val();
           var toCharset = $('#toCharset').val();
           var fromBase = $('#fromBase').val();
           var toBase = $('#toBase').val();
 
-          if(fromBase > fromCharset.length) { console.log('Not enough characters in the starting character set.'); }
-          if(toBase > toCharset.length) { console.log('Not enough characters in the result character set.'); }
+          fromCharset = fromCharset.substring(0,fromBase);
+          toCharset = toCharset.substring(0,toBase);
+
+          if(fromBase > fromCharset.length) {
+            $('#fromBase-group').addClass('has-warning');
+            $('#toText-group').addClass('has-error');
+            return 'Not enough characters in the starting character set.';
+          }
+          if(toBase > toCharset.length) {
+            $('#toBase-group').addClass('has-warning');
+            $('#toText-group').addClass('has-error');
+            return 'Not enough characters in the result character set.';
+          }
+          for(var index = 0; index < fromString.length; index++) {
+            $('#fromText-group').addClass('has-warning');
+            $('#toText-group').addClass('has-error');
+            if(fromCharset.indexOf(fromString[index]) === -1) { return 'Character "'+fromString[index]+'" not in base character set.'; }
+          }
+
+          $('.has-warning').removeClass('has-warning');
+          $('.has-error').removeClass('has-error');
 
           // Convert to base10 first
-          var temp = value;
+          var temp = fromString;
           var number = 0;
           var multiplier = 1;
           while(temp.length > 0) {
@@ -40,14 +56,21 @@
           var temp = number;
           var result = '';
           while (temp >= toBase) {
-            result = toCharset.charAt(temp%toBase)+result;
+            toString = toCharset.charAt(temp%toBase)+toString;
             temp /= toBase; // Divide by the base
           }
-          result = toCharset.charAt(temp)+result;
+          toString = toCharset.charAt(temp)+toString;
 
           // Show the result
-          $('#toText').val(result);
-        });
+          return toString;
+        }
+
+
+        $('#resetFromCharset').on('click',function() { $('#fromCharset').val(baseCharset); });
+
+        $('#resetToCharset').on('click',function() { $('#toCharset').val(baseCharset); });
+
+        $('#convert').on('click',function() { $('#toText').val(convert()); });
       });
 
     </script>
@@ -74,12 +97,12 @@
           <legend>Convert text</legend>
 
           <div class="row">
-            <div class="input-group col-md-8">
+            <div id="fromText-group" class="input-group col-md-8">
               <span class="input-group-addon"><label for="fromText">String:</label></span>
               <textarea id="fromText" class="form-control">9001</textarea>
             </div>
 
-            <div class="input-group col-md-4">
+            <div id="fromBase-group" class="input-group col-md-4">
               <span class="input-group-addon"><label for="fromBase">Base:</label></span>
               <input type="number" id="fromBase" class="form-control" value="10">
             </div>
@@ -88,12 +111,12 @@
           <br>
 
           <div class="row">
-            <div class="input-group col-md-8">
+            <div id="toText-group" class="input-group col-md-8">
               <span class="input-group-addon"><label for="toText">Result:</label></span>
               <textarea id="toText" class="form-control" disabled="disabled"></textarea>
             </div>
 
-            <div class="input-group col-md-4">
+            <div id="toBase-group" class="input-group col-md-4">
               <span class="input-group-addon "><label for="toBase">Base:</label></span>
               <input type="number" id="toBase" class="form-control" value="62">
             </div>
@@ -114,7 +137,7 @@
           <legend>Advanced settings</legend>
 
           <div class="row">
-            <div class="input-group col-md-12">
+            <div id="fromCharset-group" class="input-group col-md-12">
               <span class="input-group-addon"><label for="fromCharset">From charset:</label></span>
               <input type="text" id="fromCharset" class="form-control" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/">
               <span class="input-group-btn"><button id="resetFromCharset" class="btn btn-warning">Reset</button></span>
@@ -124,7 +147,7 @@
           <br>
 
           <div class="row">
-            <div class="input-group col-md-12">
+            <div id="toCharset-group" class="input-group col-md-12">
               <span class="input-group-addon"><label for="toCharset">To charset:</label></span>
               <input type="text" id="toCharset" class="form-control" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/">
               <span class="input-group-btn"><button id="resetToCharset" class="btn btn-warning" onlick="resetCharset(toCharset)">Reset</button></span>
