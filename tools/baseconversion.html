@@ -23,6 +23,9 @@
           fromCharset = fromCharset.substring(0,fromBase);
           toCharset = toCharset.substring(0,toBase);
 
+          $('.has-warning').removeClass('has-warning');
+          $('.has-error').removeClass('has-error');
+
           if(fromBase > fromCharset.length) {
             $('#fromBase-group').addClass('has-warning');
             $('#toText-group').addClass('has-error');
@@ -33,14 +36,23 @@
             $('#toText-group').addClass('has-error');
             return 'Not enough characters in the result character set.';
           }
-          for(var index = 0; index < fromString.length; index++) {
-            $('#fromText-group').addClass('has-warning');
+          if(fromBase <= 1) {
+            $('#fromBase-group').addClass('has-warning');
             $('#toText-group').addClass('has-error');
-            if(fromCharset.indexOf(fromString[index]) === -1) { return 'Character "'+fromString[index]+'" not in base character set.'; }
+            return 'Starting base too small.';
           }
-
-          $('.has-warning').removeClass('has-warning');
-          $('.has-error').removeClass('has-error');
+          if(toBase <= 1) {
+            $('#toBase-group').addClass('has-warning');
+            $('#toText-group').addClass('has-error');
+            return 'Result base too small.';
+          }
+          for(var index = 0; index < fromString.length; index++) {
+            if(fromCharset.indexOf(fromString[index]) === -1) {
+              $('#fromText-group').addClass('has-warning');
+              $('#toText-group').addClass('has-error');
+              return 'Character "'+fromString[index]+'" not in base character set.';
+            }
+          }
 
           // Convert to base10 first
           var temp = fromString;
