@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="scripts/analytics.js"></script>
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+
+    <h2>Convert text</h2>
+    <label for="fromText"><strong><small>String to convert:</small></strong></label><br>
+    <input type="text" id="fromText" class="long" value="9001">
+    <input type="text" id="fromBase" class="tiny" value="10"><br>
+
+    <label for="toText"><strong><small>Result:</small></strong></label><br>
+    <input type="text" id="toText" class="long" disabled="disabled">
+    <input type="text" id="ToBase" class="tiny" value="62"><br>
+
+    <button id="convert" onclick="convertText()"><strong><small>Convert</small></strong></button><br>
+
+
+    <h2>Advanced</h2>
+    <label for="fromCharset"><strong><small>From base charset:</small></strong></label><br>
+    <input type="text" id="fromCharset" class="long" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY+/">
+    <button id="resetFromCharset" onlick="resetCharset(fromCharset)"><strong><small>Reset</small></strong></button><br>
+
+    <label for="toCharset"><strong><small>To base charset:</small></strong></label><br>
+    <input type="text" id="toCharset" class="long" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY+/">
+    <button id="resetToCharset" onlick="resetCharset(toCharset)"><strong><small>Reset</small></strong></button><br>
+
+  </body>
+</html>
