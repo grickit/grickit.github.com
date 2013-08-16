@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Grickit's arbitrary base converter</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
     <link rel="stylesheet" href="../globalheader.css">
@@ -16,7 +17,8 @@
         $('#resetToCharset').on('click',function() { $('#toCharset').val(baseCharset); });
 
         $('#convert').on('click',function() {
-          var value = $('#fromText').val();
+          var fromText = $('#fromText').val();
+          var toText = '';
           var fromCharset = $('#fromCharset').val();
           var toCharset = $('#toCharset').val();
           var fromBase = $('#fromBase').val();
@@ -25,27 +27,33 @@
           if(fromBase > fromCharset.length) { console.log('Not enough characters in the starting character set.'); }
           if(toBase > toCharset.length) { console.log('Not enough characters in the result character set.'); }
 
-          // Convert to base10 first
-          var temp = value;
-          var number = 0;
-          var multiplier = 1;
-          while(temp.length > 0) {
-            number += multiplier*fromCharset.indexOf(temp.charAt(temp.length -1)); // Add the base10 value of the last character
-            temp = temp.substring(0,temp.length -1); // Chop off the last character
-            multiplier *= fromBase; // Compound the multiplier
-          }
+          var values = fromText.split(' ');
 
-          // Convert to result base next
-          var temp = number;
-          var result = '';
-          while (temp >= toBase) {
-            result = toCharset.charAt(temp%toBase)+result;
-            temp /= toBase; // Divide by the base
+          for(var index = 0; index < values.length; index++) {
+            // Convert to base10 first
+            var temp = values[index];
+            var number = 0;
+            var multiplier = 1;
+            while(temp.length > 0) {
+              number += multiplier*fromCharset.indexOf(temp.charAt(temp.length -1)); // Add the base10 value of the last character
+              temp = temp.substring(0,temp.length -1); // Chop off the last character
+              multiplier *= fromBase; // Compound the multiplier
+            }
+
+            // Convert to result base next
+            var temp = number;
+            var result = '';
+            while (temp >= toBase) {
+              result = toCharset.charAt(temp%toBase)+result;
+              temp /= toBase; // Divide by the base
+            }
+            result = toCharset.charAt(temp)+result;
+            toText += result;
+            if(index+1 < values.length) { toText += ' '; }
           }
-          result = toCharset.charAt(temp)+result;
 
           // Show the result
-          $('#toText').val(result);
+          $('#toText').val(toText);
         });
       });
 
@@ -66,7 +74,7 @@
     <div id="globalheader"><a href="http://grickit.github.io">&laquo; Back to grickit.github.io</a></div>
 
     <div class="panel" style="width: 1000px; margin-top: 50px; margin-left: auto; margin-right: auto;">
-      <div class="panel-heading"><h1>Arbitrary base conversion</h1></div>
+      <div class="panel-heading"><h1>Arbitrary base converter</h1></div>
       <div class="panel-body">
 
         <fieldset>
