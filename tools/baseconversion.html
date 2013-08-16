@@ -17,8 +17,7 @@
         $('#resetToCharset').on('click',function() { $('#toCharset').val(baseCharset); });
 
         $('#convert').on('click',function() {
-          var fromText = $('#fromText').val();
-          var toText = '';
+          var value = $('#fromText').val();
           var fromCharset = $('#fromCharset').val();
           var toCharset = $('#toCharset').val();
           var fromBase = $('#fromBase').val();
@@ -27,33 +26,27 @@
           if(fromBase > fromCharset.length) { console.log('Not enough characters in the starting character set.'); }
           if(toBase > toCharset.length) { console.log('Not enough characters in the result character set.'); }
 
-          var values = fromText.split(' ');
-
-          for(var index = 0; index < values.length; index++) {
-            // Convert to base10 first
-            var temp = values[index];
-            var number = 0;
-            var multiplier = 1;
-            while(temp.length > 0) {
-              number += multiplier*fromCharset.indexOf(temp.charAt(temp.length -1)); // Add the base10 value of the last character
-              temp = temp.substring(0,temp.length -1); // Chop off the last character
-              multiplier *= fromBase; // Compound the multiplier
-            }
-
-            // Convert to result base next
-            var temp = number;
-            var result = '';
-            while (temp >= toBase) {
-              result = toCharset.charAt(temp%toBase)+result;
-              temp /= toBase; // Divide by the base
-            }
-            result = toCharset.charAt(temp)+result;
-            toText += result;
-            if(index+1 < values.length) { toText += ' '; }
+          // Convert to base10 first
+          var temp = value;
+          var number = 0;
+          var multiplier = 1;
+          while(temp.length > 0) {
+            number += multiplier*fromCharset.indexOf(temp.charAt(temp.length -1)); // Add the base10 value of the last character
+            temp = temp.substring(0,temp.length -1); // Chop off the last character
+            multiplier *= fromBase; // Compound the multiplier
           }
 
+          // Convert to result base next
+          var temp = number;
+          var result = '';
+          while (temp >= toBase) {
+            result = toCharset.charAt(temp%toBase)+result;
+            temp /= toBase; // Divide by the base
+          }
+          result = toCharset.charAt(temp)+result;
+
           // Show the result
-          $('#toText').val(toText);
+          $('#toText').val(result);
         });
       });
 
