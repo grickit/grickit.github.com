@@ -2,10 +2,19 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="scripts/analytics.js"></script>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-    <style>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var baseCharset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY+/';
+
+        $('#resetFromCharset').on('click',function() { $('#fromCharset').val(baseCharset); });
+        $('#resetToCharset').on('click',function() { $('#toCharset').val(baseCharset); });
+      });
+
+    </script>
+    <style type="text/css">
       .input-group-addon label {
         min-width: 7em;
       }
@@ -64,7 +73,7 @@
             <div class="input-group col-md-12">
               <span class="input-group-addon"><label for="fromCharset">From charset:</label></span>
               <input type="text" id="fromCharset" class="form-control" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY+/">
-              <span class="input-group-btn"><button id="resetFromCharset" class="btn btn-warning" onlick="resetCharset(fromCharset)">Reset</button></span>
+              <span class="input-group-btn"><button id="resetFromCharset" class="btn btn-warning">Reset</button></span>
             </div>
           </div>
 
