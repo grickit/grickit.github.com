@@ -4,13 +4,13 @@
   margin-bottom: 10px;
   /* Box */
   width: 100%;
-  padding: 1em;
+  padding: 0.5em;
   background-color: #111111;
   border-bottom: 2px solid #0090B0;
   /* Text */
   text-align: left;
   font-family: Arial;
-  font-size: 0.9em;
+  font-size: 10pt;
   color: #0090B0;
   /* Advanced */
   text-shadow: 3px 3px 3px #888888;
